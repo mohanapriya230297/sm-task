@@ -1,0 +1,80 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,body{
+    height:100%;
+}
+.form-signin{
+    width:100%;
+    max-width:330px;
+    padding:15px;
+    margin:auto;
+}
+
+.form-signin .form-control{
+    position:relative;
+    box-sizing:border-box;
+    height:auto;
+    padding:10px;
+    font-size:16px;
+}
+.form-control:focus{
+    box-shadow:none;
+}
+label{
+    font-weight:500;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    margin:0;
+}
+a
+{
+    text-decoration:none;
+    color: blue;
+    font-size: 16px;
+    margin:10px;
+}
+a:hover
+{
+color: brown;
+cursor: pointer;
+}
+.btn
+{
+    background-color: rgb(104, 72, 218);
+    padding:10px 20px 10px 20px;
+    margin:30px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+.btn:hover
+{
+    opacity:0.8;
+}
+label
+{
+    width:100px;
+    display: inline-block;
+}
+
+.signup
+{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 100px; 
+    padding: 20px;
+}
+h2{
+    text-align: center;
+
+}
+.menudiv {
+    text-align: right; 
+    position: relative;
+    bottom:40px;  
+    cursor:pointer;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,47 @@
+<div class="header">
+    <app-header [menuConfig]="menu"></app-header>
+</div>
+<div class="sign">
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title class="title">Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <form class="signin" [formGroup]="signinForm" (ngSubmit)="userLogin()">
+                <table class="full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label for="email">Email ID</label>
+                                <input matInput type="email" class="form-control" formControlName="email"
+                                    required="required" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label>Password</label>
+                                <input matInput type="password" class="form-control" formControlName="password"
+                                    required="required" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="invalid">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+
+                <mat-card-actions>
+                    <button mat-raised-button [disabled]="loading" class="btn">
+                        <span *ngIf="loading"></span>
+                        Login</button>
+                    <button mat-raised-button class="btn" type="reset">Cancel</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

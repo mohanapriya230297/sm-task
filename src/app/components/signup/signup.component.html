@@ -1,0 +1,115 @@
+<div class="header">
+    <app-header [menuConfig]="menu"></app-header>
+</div>
+<div class="sign">
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title class="title">Register</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <form class="signup" [formGroup]="signupForm" (ngSubmit)="userLogin()">
+                <table class="full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label for="firstName">First Name</label>
+                                <input matInput type="text" class="form-control" formControlName="firstName" required
+                                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+                                <div *ngIf="submitted && f.firstName.errors" class="invalid">
+                                    <div class="required" *ngIf="f.firstName.errors.required">First Name is required
+                                    </div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label for="lastName">Last Name</label>
+                                <input matInput type="text" class="form-control" formControlName="lastName" required
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+                                <div *ngIf="submitted && f.lastName.errors" class="invalid">
+                                    <div class="required" *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label for="email">Email</label>
+                                <input matInput type="email" class="form-control" formControlName="email"
+                                    required="required" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid">
+                                    <div class="required" *ngIf="f.email.errors.required">Email is required</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <label for="gender">Gender</label><br>
+                            <mat-radio-group class="gender">
+                                <mat-radio-button class="form-control" value="Male" formControlName="gender"
+                                    required="required" ngDefaultControl>Male</mat-radio-button>
+                                <mat-radio-button class="form-control" value="Female" formControlName="gender"
+                                    required="required" ngDefaultControl>Female</mat-radio-button>
+                                <div *ngIf="submitted && f.gender.errors" class="invalid">
+                                    <div class="required" *ngIf="f.gender.errors.required">Gender is required</div>
+                                </div>
+                            </mat-radio-group>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label for="mobile">Mobile No</label>
+                                <input matInput type="text" class="form-control" formControlName="mobile"
+                                    required="required" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                                <div *ngIf="submitted && f.mobile.errors" class="invalid">
+                                    <div *ngIf="f.mobile.errors.required">Mobile no is required</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label for="pan">PAN No</label>
+                                <input matInput type="text" class="form-control" formControlName="pan"
+                                    required="required" [ngClass]="{ 'is-invalid': submitted && f.pan.errors }" />
+                                <div *ngIf="submitted && f.pan.errors" class="invalid">
+                                    <div class="required" *ngIf="f.pan.errors.required">PAN no is required</div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="full-width">
+                                <label>Password</label>
+                                <input matInput type="password" class="form-control" formControlName="password"
+                                    required="required" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="invalid">
+                                    <div class="required" *ngIf="f.password.errors.required">Password is required</div>
+                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                    </div>
+                                </div>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+                <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+                <mat-card-actions>
+                    <button mat-raised-button [disabled]="loading" type="submit" class="btn">
+                        <span *ngIf="loading"></span>
+                        Register
+                    </button>
+                    <button mat-raised-button class="btn" type="reset">Cancel</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
